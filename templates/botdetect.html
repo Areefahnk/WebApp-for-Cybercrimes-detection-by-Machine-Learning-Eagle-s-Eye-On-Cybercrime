@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Starter Template - Materialize</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="./static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="./static/css2/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <style>
+         @import url('https://fonts.googleapis.com/css?family=Roboto');
+          *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        outline: none;
+        font-family: 'Roboto', sans-serif;
+      }
+     
+      .wrapper{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        max-width: 550px;
+        background: rgba(0,0,0,0.8);
+        padding: 30px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      }
+
+      .wrapper .title h1{
+        color: #c5ecfd;
+        text-align: center;
+        margin-bottom: 25px;
+      }
+      .input-field{
+        margin-right:20%;
+        }
+        .btn786{
+        width: 48%;
+        margin-top: 50px;
+        background: #39b7dd;
+        text-align: center;
+        padding: 15px;
+        border-radius: 5px;
+        color: #fff;
+        cursor: pointer;
+        text-transform: uppercase;
+        position: center;}
+        .res{
+        color:#c5ecfd;
+        }
+    </style>
+</head>
+
+<body style="background-image: url('https://1000logos.net/wp-content/uploads/2017/06/Logo-Twitter.jpg'); background-repeat: no-repeat;background-position: center;background-size: cover">
+    <div class="wrapper">
+  <div class="title">
+    <h1>Twitter Bot Detection</h1>
+  </div>
+
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+
+
+              <div class="row">
+    <form action='/predict' method="post" class="col s12">
+      <div class="row">
+        <div class="input-field col s4">
+            <label for="first_name" ><b>screen_name_binary</b></label>
+            <br>
+          <input placeholder="screen_name_binary" name="Temperature" id="first_name" type="text" class="validate">
+        </div>
+        <div class="input-field col s4">
+
+          <label for="last_name1"><b>name_binary</b></label>
+            <br>
+          <input id="last_name1" name="Oxygen" placeholder="name_binary"  type="text" class="validate">
+        </div>
+
+        <div class="input-field col s4">
+            <label for="_name"><b>description_binary</b></label>
+            <br>
+          <input id="_name" name="Humidity" placeholder="description_binary" type="text" class="validate">
+
+        </div>
+        <div class="input-field col s4">
+
+          <label for="last_name2"><b>status_binary</b></label>
+            <br>
+          <input id="last_name2" name="Oxygen1" placeholder="status_binary"  type="text" class="validate">
+
+        </div>
+          <div class="input-field col s4">
+
+          <label for="last_name3"><b>verified</b></label>
+            <br>
+          <input id="last_name3" name="Oxygen2" placeholder="verified"  type="text" class="validate">
+
+        </div>
+          <div class="input-field col s4">
+
+          <label for="last_name4"><b>followers_count</b></label>
+            <br>
+          <input id="last_name4" name="Oxygen3" placeholder="followers_count"  type="text" class="validate">
+
+        </div>
+          <div class="input-field col s4">
+
+          <label for="last_name5"><b>friends_count</b></label>
+            <br>
+          <input id="last_name5" name="Oxygen4" placeholder="friends_count"  type="text" class="validate">
+
+        </div>
+          <div class="input-field col s4">
+
+          <label for="last_name6"><b>statuses_count</b></label>
+            <br>
+          <input id="last_name6" name="Oxygen5" placeholder="statuses_count"  type="text" class="validate">
+
+        </div>
+          <div class="input-field col s4">
+
+          <label for="last_name7"><b>listed_count_binary</b></label>
+            <br>
+          <input id="last_name7" name="Oxygen6" placeholder="listed_count_binary"  type="text" class="validate">
+
+        </div>
+      </div>
+
+      <div class="row center">
+
+          <button type="submit" class="btn786">Predict Probability</button>
+      </div>
+    </form>
+      </div>
+
+      <br class="res">
+        {{pred}}<br>
+
+    </div>
+  </div></div>
+
+
+    <br><br>
+  </div>
+  </div>>
+  </body>
+</html>
+
