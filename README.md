@@ -10,8 +10,10 @@ Table of Contents
 1. Depenedencies
 Python 3, Pandas, Numpy, Seaborn, MatplotLib, Sklearn, flask
 
-2. URL - Phishing Detection
-
+2. URL - Phishing Detection (PhishingDetection.py, FeatureExtraction.py)
+    Twitterbot Detection (mainpgm.py)
+    Whole flask app code - server.py
+    
 3. TwitterBotnet deployed on cloud through Heroku and Git:
 https://detecttwitterbot.herokuapp.com/
 
