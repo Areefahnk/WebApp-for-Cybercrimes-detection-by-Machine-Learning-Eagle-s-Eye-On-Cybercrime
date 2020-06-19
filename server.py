@@ -64,19 +64,118 @@ def pish():
 
 @app.route('/predict',methods=['POST','GET'])
 def predict():
-    int_features=[int(x) for x in request.form.values()]
+    int_f = [(x) for x in request.form.values()]
+    #print(int_f)
+    bag_of_words = ["bot", "b0t", "cannabis", "tweet me", "mishear", "follow me", "updates every", "gorilla", "yes_ofc",
+                    "forget", "expos", "kill", "clit", "bbb", "butt", "fuck", "XXX", "sex", "truthe", "fake", "anony",
+                    "free", "virus", "funky", "RNA",
+                    "kuck", "jargon", "nerd", "swag", "jack", "bang", "bonsai", "chick", "prison", "paper", "pokem",
+                    "xx", "freak", "ffd"
+        , "dunia", "clone", "genie", "bbb", "ffd", "onlyman", "emoji", "joke", "troll", "droop", "free", "every", "wow",
+                    "cheese", "bio", "magic"
+        , "wizard", "face"]
+    x = int_f[0]
+    #print(x)
+    exist = False
+    for word in bag_of_words:
+        # print(word)
+        if (word in x):
+            # print(word)
+            print(x)
+            print('banned words "{}" found in str'.format(word))
+            int_f[0] = 1
+            print(int_f[0])
+            exist = True
 
-    final=[np.array(int_features)]
-    print(int_features)
+            break
+
+    if (not exist):
+        int_f[0] = 0
+        print(int_f[0])
+        print('Banned words not found in str')
+    # for word in bag_of_words:
+    # if (word in x):
+    print(int_f)
+    # print(type(int_f[0]))
+
+    ####################
+    x = int_f[1]
+    print(x)
+    exist = False
+    for word in bag_of_words:
+        # print(word)
+        if (word in x):
+            # print(word)
+            print(x)
+            print('banned words "{}" found in str'.format(word))
+            int_f[1] = 1
+            print(int_f[1])
+            exist = True
+
+            break
+
+    if (not exist):
+        int_f[1] = 0
+        print(int_f[1])
+        print('Banned words not found in str')
+
+    ###################################################
+    x = int_f[2]
+    print(x)
+    exist = False
+    for word in bag_of_words:
+        # print(word)
+        if (word in x):
+            # print(word)
+            print(x)
+            print('banned words "{}" found in str'.format(word))
+            int_f[2] = 1
+            print(int_f[2])
+            exist = True
+
+            break
+
+    if (not exist):
+        int_f[2] = 0
+        print(int_f[2])
+        print('Banned words not found in str')
+    #########################################################################################
+    x = int_f[3]
+    print(x)
+    exist = False
+    for word in bag_of_words:
+        # print(word)
+        if (word in x):
+            # print(word)
+            print(x)
+            print('banned words "{}" found in str'.format(word))
+            int_f[3] = 1
+            print(int_f[0])
+            exist = True
+
+            break
+
+    if (not exist):
+        int_f[3] = 0
+        print(int_f[3])
+        print('Banned words not found in str')
+    ######################################
+    int_f[4] = int(int_f[4])
+    int_f[5] = int(int_f[5])
+    int_f[6] = int(int_f[6])
+    int_f[7] = int(int_f[7])
+    int_f[8] = int(int_f[8])
+    print(int_f)
+    final = [np.array(int_f)]
+    print(int_f)
     print(final)
-    prediction=model.predict_proba(final)
-    output='{0:.{1}f}'.format(prediction[0][1], 2)
+    prediction = model.predict_proba(final)
+    output = '{0:.{1}f}'.format(prediction[0][1], 2)
     print(output)
-
-    if output>str(0.4):
-        return render_template('botdetect.html',pred='TwitterBot Detected\nProbability of being bot is {}'.format(output),bhai="kuch karna hain iska ab?")
+    if output>str(0.5):
+        return render_template('botdetect.html',pred='TwitterBot Detected\nProbability of being bot is {}'.format(output),bhai="Danger! It is a twitterbot")
     else:
-        return render_template('botdetect.html',pred='Not a TwitterBot.\n Probability of being bot is {}'.format(output),bhai="Your Forest is Safe for now")
+        return render_template('botdetect.html',pred='Not a TwitterBot.\n Probability of being bot is {}'.format(output),bhai="It is not a twitterbot!")
 
 
 
